@@ -28,9 +28,8 @@ def go_back():
     op3.pack_forget()
     back_button.pack_forget()
 
-
 def make_password():
-    print()
+    print(random.randint(0, 9))
 
 #options
 gen_pass = tk.Button(root, text="Generate Password", width=25, command=open_choice)
