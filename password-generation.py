@@ -17,6 +17,7 @@ def open_choice():
     op1.pack()
     op2.pack()
     op3.pack()
+    ok_button.pack()
     back_button.pack()
 
 def go_back():
