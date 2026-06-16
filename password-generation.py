@@ -41,7 +41,7 @@ l_ask = tk.Label(root, text="How would you want your password to contain?")
 op1 = tk.Checkbutton(root, text="Letters", variable=1, width=15, anchor="w")
 op2 = tk.Checkbutton(root, text="Numbers", variable=2, width=15, anchor="w")
 op3 = tk.Checkbutton(root, text="Symbols", variable=3, width=15, anchor="w")
-ok_button = tk.Checkbutton(root, text="Generate", variable=4, width=15, anchor="w", command=make_password)
+ok_button = tk.Button(root, text="Generate", command=make_password)
 back_button = tk.Button(root, text="Go back", command=go_back)
 
 root.mainloop()
