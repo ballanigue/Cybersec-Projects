@@ -27,6 +27,7 @@ def go_back():
     op1.pack_forget()
     op2.pack_forget()
     op3.pack_forget()
+    ok_button.pack_forget()
     back_button.pack_forget()
 
 def make_password():
