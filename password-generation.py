@@ -1,5 +1,6 @@
 import tkinter as tk
 import random
+import string
 
 #customizing the GUI
 root = tk.Tk()
@@ -17,6 +18,8 @@ def open_choice():
     op1.pack()
     op2.pack()
     op3.pack()
+    l2_ask.pack()
+    slider.pack()
     ok_button.pack()
     back_button.pack()
 
@@ -27,11 +30,43 @@ def go_back():
     op1.pack_forget()
     op2.pack_forget()
     op3.pack_forget()
+    l2_ask.pack_forget()
+    slider.pack_forget()
     ok_button.pack_forget()
     back_button.pack_forget()
 
+#checking if these are checked
+var_letters = tk.IntVar()
+var_numbers = tk.IntVar()
+var_symbols = tk.IntVar()
+
 def make_password():
+#checks for checkboxes
+    password_pool = ""
+    if var_letters.get() == 1:
+        password_pool += string.ascii_letters
+    if var_numbers.get() == 1:
+        password_pool += string.digits
+    if var_symbols.get() == 1:
+        password_pool += string.punctuation
+    count = slider.get()
+#actually makes password
+    if password_pool and count > 0:
+        thy_password = random.choices(password_pool, k=count)
+        print(''.join(thy_password))
+    elif count == 0:
+        print("Slider set to 0, no password generated.")
+    else:
+        print("Please select one box.")
+
+def make_letters():
+    print(random.choice(string.ascii_letters))
+
+def make_number():
     print(random.randint(0, 9))
+
+def make_symbol():
+    print(random.choice(string.punctuation))
 
 #options
 gen_pass = tk.Button(root, text="Generate Password", width=25, command=open_choice)
@@ -40,10 +75,13 @@ exit_b = tk.Button(root, text="Stop", width=25, command=root.destroy)
 exit_b.pack()
 #options2
 l_ask = tk.Label(root, text="How would you want your password to contain?")
-op1 = tk.Checkbutton(root, text="Letters", variable=1, width=15, anchor="w")
-op2 = tk.Checkbutton(root, text="Numbers", variable=2, width=15, anchor="w")
-op3 = tk.Checkbutton(root, text="Symbols", variable=3, width=15, anchor="w")
+op1 = tk.Checkbutton(root, text="Letters", variable=var_letters, width=15, anchor="w")
+op2 = tk.Checkbutton(root, text="Numbers", variable=var_numbers, width=15, anchor="w")
+op3 = tk.Checkbutton(root, text="Symbols", variable=var_symbols, width=15, anchor="w")
+#some buttons and things to interact with
 ok_button = tk.Button(root, text="Generate", command=make_password)
 back_button = tk.Button(root, text="Go back", command=go_back)
+l2_ask = tk.Label(root, text="How long do you want your password to be?")
+slider = tk.Scale(root, from_=0, to=20, orient="horizontal")
 
 root.mainloop()
