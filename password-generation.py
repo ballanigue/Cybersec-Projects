@@ -22,6 +22,7 @@ def open_choice():
     slider.pack()
     ok_button.pack()
     back_button.pack()
+    password_label.pack()
 
 def go_back():
     l_ask.pack_forget()
@@ -34,6 +35,7 @@ def go_back():
     slider.pack_forget()
     ok_button.pack_forget()
     back_button.pack_forget()
+    password_label.pack_forget()
 
 #checking if these are checked
 var_letters = tk.IntVar()
@@ -53,7 +55,8 @@ def make_password():
 #actually makes password
     if password_pool and count > 0:
         thy_password = random.choices(password_pool, k=count)
-        print(''.join(thy_password))
+        the_pass = ''.join(thy_password)
+        password_label.config(text=the_pass)
     elif count == 0:
         print("Slider set to 0, no password generated.")
     else:
@@ -83,5 +86,6 @@ ok_button = tk.Button(root, text="Generate", command=make_password)
 back_button = tk.Button(root, text="Go back", command=go_back)
 l2_ask = tk.Label(root, text="How long do you want your password to be?")
 slider = tk.Scale(root, from_=0, to=20, orient="horizontal")
+password_label = tk.Label(root, text="...")
 
 root.mainloop()
