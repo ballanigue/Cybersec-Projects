@@ -2,7 +2,7 @@
 A fucntional working app that uses tkinter, has a set of GUI's and more.
 
 ## How to Use?
-1. Download the file here: [password-generator](https://github.com/ballanigue/Foundational-Exercises/blob/main/calculate-grade/CalculateGrade.py)
+1. Download the file here: [password-generator.py](https://github.com/ballanigue/Cybersec-Projects/blob/main/pass-gen/password-generator.py)
 2. Run the code in whichever apps you use (Windows Powershell, VS Code, etc...)
 3. Upon running the code, a menu will appear with a set of buttons to choose from
 
