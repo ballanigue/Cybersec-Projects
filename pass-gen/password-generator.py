@@ -58,9 +58,11 @@ def make_password():
         the_pass = ''.join(thy_password)
         password_label.config(text=the_pass)
     elif count == 0:
-        print("Slider set to 0, no password generated.")
+        S_error = ("Slider set to 0, no password generated.")
+        password_label.config(text=S_error)
     else:
-        print("Please select one box.")
+        B_error = ("Please select at least one box.")
+        password_label.config(text=B_error)
 
 def make_letters():
     print(random.choice(string.ascii_letters))
