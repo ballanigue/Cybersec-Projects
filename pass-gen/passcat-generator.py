@@ -66,3 +66,61 @@ the_cat = CTK.CTkLabel(
     justify="left"
 )
 the_cat.pack()
+
+#decorating slider
+slider_frame = CTK.CTkFrame(
+    master=app,
+    corner_radius=12
+)
+slider_frame.pack(fill="x", padx=20, pady=(10, 20))
+
+length_label = CTK.CTkLabel(
+    master=slider_frame,
+    text="LENGTH:",
+    text_color="#A0A5AA",
+    font=("Arial", 11, "bold")
+)
+length_label.grid(row=0, column=0, sticky="w", padx=(15, 0), pady=(10, 0))
+length_num = CTK.CTkLabel(
+    master=slider_frame,
+    text="0",
+    font=("Arial", 11, "bold")
+)
+length_num.grid(row=0, column=1, columnspan=2, sticky="w", padx=(5, 0), pady=(10, 0))
+min_label = CTK.CTkLabel(
+    master=slider_frame,
+    text="0",
+    font=("Arial", 13, "bold")
+)
+
+min_label.grid(row=1, column=0, padx=(15, 5), pady=(5, 15))
+slider = CTK.CTkSlider(
+    master=slider_frame,
+    number_of_steps=60, 
+    from_=0, 
+    to=20, 
+    command=update_length)
+slider.grid(row=1, column=1, sticky="ew", pady=(5, 15))
+slider.set(0)
+max_label = CTK.CTkLabel(
+    master=slider_frame,
+    text="20",
+    font=("Arial", 13, "bold")
+)
+max_label.grid(row=1, column=2, padx=(5, 15), pady=(5, 15))
+slider_frame.grid_columnconfigure(1, weight=1)
+
+#the options
+opt_frame = CTK.CTkFrame(
+    master=app,
+    corner_radius=12
+)
+opt_frame.pack(fill="x", padx=20, pady=(10, 20))
+opt_frame.grid_columnconfigure(0, weight=1)
+opt_label = CTK.CTkLabel(
+    master=opt_frame,
+    text="OPTIONS",
+    text_color="#A0A5AA",
+    font=("Arial", 11, "bold")
+)
+opt_label.grid(row=0, column=0, sticky="w", padx=(15, 0), pady=(10, 0))
