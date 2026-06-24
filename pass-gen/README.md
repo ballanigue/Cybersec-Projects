@@ -8,7 +8,7 @@ There are two apps (CTkinter & Tkinter)
 A simple and a step-by-step process to install the code.
 - Downloading the necessities:
   1. Install Python in your device: https://www.python.org
-  2. Download the file here: [password-generator.py](https://github.com/ballanigue/Cybersec-Projects/blob/main/pass-gen/password-generator.py)
+  2. Download the file here: [passcat-generator.py](https://github.com/ballanigue/Cybersec-Projects/blob/main/pass-gen/passcat-generator.py)
 
 ### 2. Select Options to Run the File
 There are three options, starting from the most basic step to a more lengthy process.
