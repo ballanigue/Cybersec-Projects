@@ -31,3 +31,24 @@ app = CTK.CTk()
 app.geometry("600x700")
 CTK.set_appearance_mode("dark")
 app.title("Password Cat Generator")
+
+#adding functions
+def update_length(value):
+    length_num.configure(text=str(int(value)))
+
+# var check
+def switch_event():
+    print("switch toggled, current value:", optL_switch.get())
+
+def make_password():
+#checks for checkboxes
+    print("work")
+
+def make_letters():
+    print(random.choice(string.ascii_letters))
+
+def make_number():
+    print(random.randint(0, 9))
+
+def make_symbol():
+    print(random.choice(string.punctuation))
