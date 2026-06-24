@@ -266,3 +266,43 @@ optS_switch = CTK.CTkSwitch(
     offvalue="off"
 )
 optS_switch.grid(row=3, column=2, sticky="e", padx=(15, 0), pady=(0, 10))
+
+#main menu
+start_btn = CTK.CTkButton(master=app, text="Start", font=("Arial", 15), width=500, height=45, command=gen_menu)
+start_btn.pack(padx=10, pady=5)
+stngs_btn = CTK.CTkButton(master=app, text="Settings", font=("Arial", 15), width=500, height=45)
+stngs_btn.pack(padx=10, pady=5)
+quit_btn = CTK.CTkButton(master=app,
+    text="Quit", 
+    font=("Arial", 15), 
+    fg_color="#A82828",
+    hover_color="#6E1D1D",
+    width=500, height=45, 
+    command=app.quit
+)
+quit_btn.pack(padx=10, pady=5)
+
+#gen menu
+make_btn = CTK.CTkButton(
+    master=app, 
+    text="Generate", 
+    font=("Arial", 15),
+    fg_color="#28A83D",
+    hover_color="#1D6E20",
+    width=500, height=45,
+    command=make_password
+)
+back_btn = CTK.CTkButton(master=app, text="Go Back", font=("Arial", 15), width=500, height=45, command=go_back)
+copy_plabel = CTK.CTkEntry(
+    master=app,
+    font=("Arial", 15),
+    placeholder_text="",
+    border_width=0,
+    width=500, height=45,
+    justify="center",
+    text_color=("black", "white")
+)
+copy_plabel.insert(0, "Double Click or Drag me to copy the text!")
+copy_plabel.configure(state="readonly")
+
+app.mainloop()
