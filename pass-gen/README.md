@@ -1,5 +1,7 @@
 # 🔐Password Generator
 A fucntional working app that uses tkinter, has a set of GUI's and more.
+There are two apps (CTkinter & Tkinter)
+**What's the difference?**
 
 ## How to Use?
 ### **1. Downloading and Running the Code**
