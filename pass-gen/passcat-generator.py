@@ -52,3 +52,17 @@ def make_number():
 
 def make_symbol():
     print(random.choice(string.punctuation))
+
+#next the GUI
+wlc_label = CTK.CTkLabel(
+    app, 
+    text="Create Your Password", 
+    font=("Arial", 20, "bold"))
+wlc_label.pack(pady=20)
+the_cat = CTK.CTkLabel(
+    master=app,
+    text=ascii_cat,
+    font=("Consolas", -18),
+    justify="left"
+)
+the_cat.pack()
