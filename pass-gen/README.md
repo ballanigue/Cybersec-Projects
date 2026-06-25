@@ -14,8 +14,8 @@ The File: [passcat-generator.py](https://github.com/ballanigue/Cybersec-Projects
 ### Password Generator
 Boring old tkinter. Not themed cat if you are allergic to them, and shares the same feature as the one above. Less User control.
 - Simplified main menu
-- No settings
 - Not able to copy the password
+- Uses Checkboxes instead of Switches
 
 **NOTE: I plan to change this for the user to be able to copy the password.**
 
