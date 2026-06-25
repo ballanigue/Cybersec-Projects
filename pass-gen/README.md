@@ -1,28 +1,32 @@
 # 🔐Password Generator
 A fucntional working app that uses tkinter, has a set of GUI's and more.
-There are two apps (CTkinter & Tkinter)
-**What's the difference?**
+
+## Two Apps, Same Function
+This project has two apps inside the folder. Two have same function but in different fonts.
+### Password Cat Generator
+A themed cat password generator. This one uses customtkinter for a better look, and the user may able to customize the app too.
+- A main menu with a better look and a cat judging you
+- Settings feature that allows the user to change the app
+- Overall, better in terms of new features and looks
+
+The File: [passcat-generator.py](https://github.com/ballanigue/Cybersec-Projects/blob/main/pass-gen/passcat-generator.py)
+
+### Password Generator
+Boring old tkinter. Not themed cat if you are allergic to them, and shares the same feature as the one above. Less User control.
+- Simplified main menu
+- No settings
+- Not able to copy the password
+
+**NOTE: I plan to change this for the user to be able to copy the password.**
+
+The File: [password-generator.py](https://github.com/ballanigue/Cybersec-Projects/blob/main/pass-gen/password-generator.py)
 
 ## How to Use?
 ### **1. Downloading and Running the Code**
 A simple and a step-by-step process to install the code.
 - Downloading the necessities:
   1. Install Python in your device: https://www.python.org
-  2. Download the file here: [passcat-generator.py](https://github.com/ballanigue/Cybersec-Projects/blob/main/pass-gen/passcat-generator.py)
-
-### 2. Select Options to Run the File
-There are three options, starting from the most basic step to a more lengthy process.
-- **Directly Opening the Code**
-  1. If you have your Python installed, simply double click the file to run the code.
-- **Using Window Powershell**
-  1. Copy PassCatGenerator in your downloaded file. Note: Copying the path does not work, instead, just copy the file by clicking right and copy, OR (CTRL + C) on the selected file.
-  2. Open Window Powershell
-  3. Paste the copied text (CTRL + V) or simply right click
-  4. Press enter
-- **Using Visual Studio Code**
-  1. Install VS Code here: https://code.visualstudio.com/download
-  2. Open VS Code and import the file there
-  3. Run the code
+  2. Download your choice of app from this file
 
 ## Contents of Password Generator
 - Has two menus, a main and a submenu for generating the password
