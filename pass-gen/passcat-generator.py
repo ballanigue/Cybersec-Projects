@@ -4,8 +4,8 @@ import string
 
 ascii_cat = r"""
               /\_____/\ 
-             /  -   -  \  not
-            ( ==  ^  == )   looking..
+             /  >   <  \  not
+            ( ==  ^  == )   looking!!
              )         (
             (           )
            ( (  )   (  ) )
@@ -20,6 +20,16 @@ ascii_cat_s = r"""
      (           )
     ( (  )   (  ) )
    (__(__)___(__)__)
+"""
+
+ascii_cat_w = r"""
+             /\_____/\   
+            /  -   -  \  watchu
+           ( ==  ^  == )  changing?
+            )         (
+           (           )
+          ( (  )   (  ) )
+         (__(__)___(__)__)
 """
 
 ascii_cat_o = r"""
@@ -63,9 +73,22 @@ def gen_menu():
     stngs_btn.pack_forget()
     quit_btn.pack_forget()
 
+def go_settings():
+    #cat CAT!
+    the_wcat.pack()
+    the_ocat.pack_forget()
+    the_Scat.pack_forget()
+    #Show
+    back_btn.pack(padx=10, pady=5)
+    #Forget
+    start_btn.pack_forget()
+    stngs_btn.pack_forget()
+    quit_btn.pack_forget()
+
 def go_back():
     #the CAT!
     the_Ccat.pack_forget()
+    the_wcat.pack_forget()    
     the_ocat.pack()
     #Show
     start_btn.pack(padx=10, pady=5)
@@ -152,6 +175,14 @@ the_ocat = CTK.CTkLabel(
 )
 the_ocat.pack_forget()
 
+the_wcat = CTK.CTkLabel(
+    master=app,
+    text=ascii_cat_w,
+    font=("Consolas", -15),
+    justify="left"
+)
+the_wcat.pack_forget()
+
 #decorating slider
 slider_frame = CTK.CTkFrame(
     master=app,
@@ -208,7 +239,7 @@ opt_label = CTK.CTkLabel(
     text_color="#A0A5AA",
     font=("Arial", 11, "bold")
 )
-opt_label.grid(row=0, column=0, sticky="w", padx=(15, 0), pady=(0, 15))
+opt_label.grid(row=0, column=0, sticky="w", padx=(15, 0), pady=(10, 0))
 
 # Letter TXT Label
 optL_label = CTK.CTkLabel(
@@ -270,7 +301,7 @@ optS_switch.grid(row=3, column=2, sticky="e", padx=(15, 0), pady=(0, 10))
 #main menu
 start_btn = CTK.CTkButton(master=app, text="Start", font=("Arial", 15), width=500, height=45, command=gen_menu)
 start_btn.pack(padx=10, pady=5)
-stngs_btn = CTK.CTkButton(master=app, text="Settings", font=("Arial", 15), width=500, height=45)
+stngs_btn = CTK.CTkButton(master=app, text="Settings", font=("Arial", 15), width=500, height=45, command=go_settings)
 stngs_btn.pack(padx=10, pady=5)
 quit_btn = CTK.CTkButton(master=app,
     text="Quit", 
