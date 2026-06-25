@@ -32,6 +32,26 @@ ascii_cat_w = r"""
          (__(__)___(__)__)
 """
 
+ascii_cat_no = r"""
+           /\_____/\   
+          /  >   <  \  MY
+         ( ==  ^  == )  EYES!!!
+          )         (
+         (           )
+        ( (  )   (  ) )
+       (__(__)___(__)__)
+"""
+
+ascii_cat_trauma = r"""
+              /\_____/\ 
+             /  .   .  \  i...
+            ( ==  ^  == )   can't see
+             )         (
+            (           )
+           ( (  )   (  ) )
+          (__(__)___(__)__)
+"""
+
 ascii_cat_o = r"""
     /\_____/\ 
    /  .   .  \
@@ -51,7 +71,7 @@ ascii_cat_o = r"""
 #customizing window
 app = CTK.CTk()
 app.geometry("600x700")
-CTK.set_appearance_mode("dark")
+CTK.set_appearance_mode("Dark")
 app.title("Password Cat Generator")
 
 #adding functions
@@ -78,7 +98,8 @@ def go_settings():
     the_wcat.pack()
     the_ocat.pack_forget()
     the_Scat.pack_forget()
-    #Show
+    #Show Settings
+    stngs_frame.pack(fill="x", padx=20, pady=(10, 20))
     back_btn.pack(padx=10, pady=5)
     #Forget
     start_btn.pack_forget()
@@ -88,13 +109,16 @@ def go_settings():
 def go_back():
     #the CAT!
     the_Ccat.pack_forget()
-    the_wcat.pack_forget()    
+    the_wcat.pack_forget()
+    the_nocat.pack_forget()
+    the_Tcat.pack_forget()
     the_ocat.pack()
     #Show
     start_btn.pack(padx=10, pady=5)
     stngs_btn.pack(padx=10, pady=5)
     quit_btn.pack(padx=10, pady=5)
     #Forget
+    stngs_frame.pack_forget()
     slider_frame.pack_forget()
     opt_frame.pack_forget()
     make_btn.pack_forget()
@@ -103,6 +127,25 @@ def go_back():
 
 def update_length(value):
     length_num.configure(text=str(int(value)))
+
+def light_mode():
+    if lightM_var.get() == "on":
+        CTK.set_appearance_mode("Light")
+        the_wcat.pack_forget()
+        the_Tcat.pack_forget()
+        the_nocat.pack()
+        stngs_frame.pack_forget()
+        back_btn.pack_forget()
+        stngs_frame.pack(fill="x", padx=20, pady=(10, 20))
+        back_btn.pack(padx=10, pady=5)
+    else:
+        CTK.set_appearance_mode("Dark")
+        the_nocat.pack_forget()
+        the_Tcat.pack()
+        stngs_frame.pack_forget()
+        back_btn.pack_forget()
+        stngs_frame.pack(fill="x", padx=20, pady=(10, 20))
+        back_btn.pack(padx=10, pady=5)
 
 #vars
 optL_var = CTK.StringVar(value="off")
@@ -182,6 +225,22 @@ the_wcat = CTK.CTkLabel(
     justify="left"
 )
 the_wcat.pack_forget()
+
+the_nocat = CTK.CTkLabel(
+    master=app,
+    text=ascii_cat_no,
+    font=("Consolas", -15),
+    justify="left"
+)
+the_nocat.pack_forget()
+
+the_Tcat = CTK.CTkLabel(
+    master=app,
+    text=ascii_cat_trauma,
+    font=("Consolas", -15),
+    justify="left"
+)
+the_Tcat.pack_forget()
 
 #decorating slider
 slider_frame = CTK.CTkFrame(
@@ -313,7 +372,7 @@ quit_btn = CTK.CTkButton(master=app,
 )
 quit_btn.pack(padx=10, pady=5)
 
-#gen menu
+#gen buttons
 make_btn = CTK.CTkButton(
     master=app, 
     text="Generate", 
@@ -335,5 +394,41 @@ copy_plabel = CTK.CTkEntry(
 )
 copy_plabel.insert(0, "Double Click or Drag me to copy the text!")
 copy_plabel.configure(state="readonly")
+
+#Settings Menu
+stngs_frame = CTK.CTkFrame(
+    master=app,
+    corner_radius=12,
+)
+
+stngs_frame.pack_forget()
+stngs_frame.grid_columnconfigure(0, weight=1)
+stngs_label = CTK.CTkLabel(
+    master=stngs_frame,
+    text="SETTINGS",
+    text_color="#A0A5AA",
+    font=("Arial", 11, "bold")
+)
+stngs_label.grid(row=0, column=0, sticky="w", padx=(15, 0), pady=(10, 0))
+# Dark TXT Label
+lightM_label = CTK.CTkLabel(
+    master=stngs_frame,
+    text="Light Mode (For Crazy People)",
+    justify="right",
+    font=("Arial", 15, "bold")
+)
+lightM_label.grid(row=1, column=0, sticky="w", padx=(30, 0), pady=(0, 10))
+# Letter Switch
+lightM_var = CTK.StringVar(value="off")
+lightM_switch = CTK.CTkSwitch(
+    master=stngs_frame,
+    text="",
+    variable=lightM_var,
+    onvalue="on",
+    offvalue="off",
+    command=light_mode
+)
+lightM_switch.grid(row=1, column=2, sticky="e", padx=(15, 0), pady=(0, 10))
+
 
 app.mainloop()
