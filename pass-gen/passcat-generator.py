@@ -418,7 +418,7 @@ lightM_label = CTK.CTkLabel(
     font=("Arial", 15, "bold")
 )
 lightM_label.grid(row=1, column=0, sticky="w", padx=(30, 0), pady=(0, 10))
-# Letter Switch
+# Mode Switch
 lightM_var = CTK.StringVar(value="off")
 lightM_switch = CTK.CTkSwitch(
     master=stngs_frame,
