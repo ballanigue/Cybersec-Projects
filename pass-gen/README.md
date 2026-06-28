@@ -1,6 +1,9 @@
 # 🔐Password Generator
 A fucntional working app that uses tkinter, has a set of GUI's and more.
 
+### _IMPORTANT_!
+Install tkinter in your Termal by pasting the code there (python -m tkinter) for Password Generator and (pip install customtkinter) for Password Cat Generator. Otherwise, the code will not run as it lacks the necessary files.
+
 ## Two Apps, Same Function
 This project has two apps inside the folder. Two have same function but in different fonts.
 ### Password Cat Generator
